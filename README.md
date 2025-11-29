@@ -13,7 +13,7 @@ This project analyzes **Smart-seq2 single-cell RNA-seq data** from human microgl
 - **SRA Accessions**: SRR11271993 - SRR11272311 (160 samples)
 - **Title**: Single-cell RNA Sequencing of human microglia from post mortem Alzheimer's Disease CNS tissue
 - **Library Type**: Smart-seq2 with barcoding (bc-Smart-seq2)
-- **Sample Count**: 160 single-cell samples
+- **Sample Count**: 160 pooled samples (~80-84 cells per sample, ~12,942 total cells)
 - **Publication**: Alsema et al. (2020) Front Mol Neurosci, PMID: 33192286
 
 ## Data Structure
