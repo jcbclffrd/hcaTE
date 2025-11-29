@@ -176,6 +176,18 @@ The previous pipeline (`HumanBam2scTE`) incorrectly treated this single-cell bar
 5. **Batch processing**: Parallel processing strategy for 160 samples?
 6. **Output format**: Cell-level BAMs or sample-level BAMs with CB tags?
 
+## Cell Barcode Whitelist
+
+The 84 valid 10bp cell barcodes used in the bc-Smart-seq2 protocol are available from GEO:
+
+```bash
+# Download cell barcode whitelist from GEO supplementary files
+wget -O annotations/GSE146639_readinCBC.csv "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE146nnn/GSE146639/suppl/GSE146639_readinCBC.csv.gz"
+gunzip annotations/GSE146639_readinCBC.csv.gz
+```
+
+This whitelist is already included in `annotations/GSE146639_readinCBC.csv` and `annotations/cell_barcode_whitelist.txt`.
+
 ## Differential Expression Analysis
 
 ### Get Sample Metadata
