@@ -1,0 +1,44 @@
+================================================================================
+PSEUDO-BULK AGGREGATION SUMMARY
+================================================================================
+
+Total samples: 31
+Total features: 76393
+
+Samples by condition:
+  AD: 12 samples
+  CTR: 9 samples
+  CTR+: 6 samples
+  MCI: 4 samples
+
+Total counts per sample:
+  Min: 284,752
+  Max: 781,493
+  Mean: 552,948
+  Median: 562,330
+
+Detailed counts by condition:
+
+  AD (12 samples):
+    Min: 347,534
+    Max: 781,493
+    Mean: 601,468
+    Median: 620,485
+
+  CTR (9 samples):
+    Min: 284,752
+    Max: 681,015
+    Mean: 455,636
+    Median: 474,630
+
+  CTR+ (6 samples):
+    Min: 452,731
+    Max: 696,879
+    Mean: 583,382
+    Median: 580,972
+
+  MCI (4 samples):
+    Min: 502,960
+    Max: 665,953
+    Mean: 580,686
+    Median: 576,914

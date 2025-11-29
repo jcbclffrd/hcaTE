@@ -12,13 +12,13 @@
 **Findings from FASTQ examination:**
 - R1 (barcodes): 19bp fixed length
 - R2 (cDNA): 63bp fixed length
-- Position 6 in R1 is mostly real bases (not always N)
-- Structure appears to be: **16bp cell barcode + 3bp UMI/adapter**
+- Structure from GSE146639 methods: **7bp UMI + 10bp cell barcode + 2bp (stay on read)**
 
 **Configuration used:**
 ```python
-CELL_BARCODE_LENGTH = 16
-UMI_LENGTH = 3
+UMI_LENGTH = 7  # First 7bp
+CELL_BARCODE_LENGTH = 10  # Next 10bp
+BARCODE_PATTERN = "NNNNNNNCCCCCCCCCC"  # 7N + 10C for umi_tools
 ```
 
 ### 3. Annotations Processing
@@ -65,8 +65,9 @@ STAR --runMode genomeGenerate \
 ```python
 RAM_GB = 120
 CPU_CORES = 20
-CELL_BARCODE_LENGTH = 16
-UMI_LENGTH = 3
+UMI_LENGTH = 7
+CELL_BARCODE_LENGTH = 10
+BARCODE_PATTERN = "NNNNNNNCCCCCCCCCC"
 MULTIMAPPER_MAX = 100
 MISMATCH_MAX = 999
 ```
@@ -193,13 +194,13 @@ scTE -i /home/jacobc/hcaTE/aligned_bams/SRR*/SRR*_Aligned.sortedByCoord.out.bam 
 ## Answers to Key Questions
 
 ### 1. Barcode Structure?
-**16bp cell barcode + 3bp UMI** (total 19bp in R1 files)
+**7bp UMI + 10bp cell barcode** (17bp extracted from 19bp R1 reads)
 
 ### 2. Barcode Whitelist?
-**None needed** - Smart-seq2 treats each sample as essentially one cell. Using `--soloCBwhitelist None`
+**84 valid cell barcodes** from GSE146639_readinCBC.csv - each sample has ~84 pooled cells
 
 ### 3. Alignment Strategy?
-**STARsolo with SmartSeq mode** - extracts barcodes from R1, maps R2 (cDNA) to genome, tags all reads with CB and UB
+**UMI-tools + STAR** - extracts 7bp UMI + 10bp cell barcode from R1 using umi_tools, then aligns R2 (cDNA) with STAR, adds CB/UB tags for scTE
 
 ### 4. TE Annotations?
 **Included in STAR index** - improves alignment rate accuracy for QC filtering
