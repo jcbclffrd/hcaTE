@@ -21,8 +21,8 @@ This project analyzes **Smart-seq2 single-cell RNA-seq data** from human microgl
 ### Read Layout (CRITICAL!)
 Each sample has **two FASTQ files** with **different purposes**:
 
-- **`SRR*_1.fastq.gz`**: **19bp cell barcodes** (16bp cell barcode + UMI)
-  - Fixed length: 19bp
+- **`SRR*_1.fastq.gz`**: **17bp cell barcodes** (7bp UMI + 10bp cell barcode)
+  - Fixed length: 17bp
   - Purpose: Identify individual cells
   - Quality: Q30+ (excellent)
   
