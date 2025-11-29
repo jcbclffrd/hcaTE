@@ -130,7 +130,9 @@ results_dt[, regulation := ifelse(log2FoldChange > 0, "Up in AD", "Down in AD")]
 results_dt[, abs_log2FC := abs(log2FoldChange)]
 
 # Annotate gene vs TE
-results_dt[, feature_type := ifelse(grepl("^ENS", feature), "Gene", "TE")]
+# TEs in scTE output have format: NAME#CLASS#FAMILY (e.g., MER61B#LTR#ERV1)
+# Genes are gene symbols without "#" (e.g., HSPA6, JUN, A1BG)
+results_dt[, feature_type := ifelse(grepl("#", feature), "TE", "Gene")]
 
 cat("  Feature type distribution:\n")
 print(table(results_dt$feature_type))
