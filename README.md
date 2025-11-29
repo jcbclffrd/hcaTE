@@ -8,11 +8,13 @@ This project analyzes **Smart-seq2 single-cell RNA-seq data** from human microgl
 **CRITICAL**: This is **barcoded single-cell data**, NOT bulk RNA-seq!
 
 ## Data Source
-- **Study**: PRJNA611563 (GSE146639)
+- **BioProject**: PRJNA611563
+- **GEO Series**: GSE146639
+- **SRA Accessions**: SRR11271993 - SRR11272311 (160 samples)
 - **Title**: Single-cell RNA Sequencing of human microglia from post mortem Alzheimer's Disease CNS tissue
 - **Library Type**: Smart-seq2 with barcoding (bc-Smart-seq2)
 - **Sample Count**: 160 single-cell samples
-- **Publication**: [Add DOI/PMID if available]
+- **Publication**: Olah et al. (2020) Nat Neurosci, PMID: 33192286
 
 ## Data Structure
 
@@ -173,6 +175,30 @@ The previous pipeline (`HumanBam2scTE`) incorrectly treated this single-cell bar
 4. **Genome index**: Build new or use existing? Need TE integration?
 5. **Batch processing**: Parallel processing strategy for 160 samples?
 6. **Output format**: Cell-level BAMs or sample-level BAMs with CB tags?
+
+## Differential Expression Analysis
+
+### Get Sample Metadata
+```bash
+# Download GEO metadata for sample grouping (AD, CTR, CTR+, MCI)
+wget -O GSE146639_metadata.txt "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE146639&targ=self&form=text&view=full"
+wget -O GSE146639_series_matrix.txt.gz "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE146nnn/GSE146639/matrix/GSE146639_series_matrix.txt.gz"
+gunzip GSE146639_series_matrix.txt.gz
+```
+
+### Aggregate Single-Cell to Pseudo-bulk
+```bash
+# Aggregate cells within each sample to create pseudo-bulk (treats samples as biological replicates)
+python3 scripts/aggregate_to_pseudobulk.py
+```
+
+### Run DESeq2
+```bash
+# Compare AD vs Control using DESeq2
+Rscript scripts/pseudobulk_diffexp_analysis.R
+```
+
+**Output**: Significant TEs in `pseudobulk/pseudobulk_diffexp_results_TEs_significant.csv`
 
 ## Contact & Context
 
