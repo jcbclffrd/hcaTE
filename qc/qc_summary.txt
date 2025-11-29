@@ -1,0 +1,25 @@
+================================================================================
+BC-SMART-SEQ2 PIPELINE QC REPORT
+================================================================================
+
+ALIGNMENT METRICS:
+  Total samples:          157
+  Total reads:            2,857,934,709
+  Avg unique mapped:      66.91%
+  Avg multi-mapped:       12.85%
+  Avg unmapped:           19.34%
+  Total mapped rate:      79.77%
+
+scTE QUANTIFICATION METRICS:
+  Total cells detected:   12,942
+  Avg cells/sample:       82.4
+  Total UMI counts:       96,298,534
+  Avg UMIs/cell:          7,426
+  Avg features/cell:      511
+  Median features/cell:   504
+
+CELL COUNT DISTRIBUTION:
+  Min cells/sample:       60
+  Max cells/sample:       84
+  Expected (84):          91 samples
+  Below expected (<84):   66 samples

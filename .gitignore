@@ -1,0 +1,86 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data directories
+sra_downloads/
+aligned_bams/
+scTE_output/
+reference/
+annotations/
+star_index/
+
+# Large reference files
+*.fa
+*.fa.gz
+*.fasta
+*.fasta.gz
+*.gtf
+*.gtf.gz
+*.gff
+*.gff.gz
+*.bed
+*.bed.gz
+
+# BAM files and indices
+*.bam
+*.bai
+*.sam
+*.cram
+*.crai
+
+# FASTQ files
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Temporary files
+*.tmp
+*.temp
+*_tmp/
+*_scTEtmp/
+temp/
+tmp/
+
+# Log files
+*.log
+*.out
+*.err
+Log*.out
+Log*.final.out
+Log*.progress.out
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# R files
+.Rhistory
+.RData
+.Rproj.user
+
+# Compressed files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# System files
+Thumbs.db
+.directory

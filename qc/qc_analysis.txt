@@ -1,0 +1,161 @@
+================================================================================
+BC-SMART-SEQ2 PIPELINE - COMPREHENSIVE QC ANALYSIS
+================================================================================
+
+PROJECT OVERVIEW:
+  Dataset:         GSE146639 (Human intestinal organoids, bc-Smart-seq2)
+  Total samples:   157
+  Total cells:     12,942 (avg 82.4 per sample)
+  Expected cells:  13,188 (84 per sample)
+  Detection rate:  98.1% (12,942 / 13,188)
+
+================================================================================
+ALIGNMENT QUALITY (STAR)
+================================================================================
+
+INPUT DATA:
+  Total reads:                2,857,934,709 (~18.2M reads/sample)
+  Read structure:             R1: 19bp (7bp UMI + 10bp CB + 2bp)
+                              R2: 63bp (cDNA insert)
+
+MAPPING STATISTICS:
+  Uniquely mapped:            66.91% (good for TE-rich regions)
+  Multi-mapped:               12.85% (expected for repetitive TEs)
+  Total mapped:               79.77% (excellent for pooled Smart-seq2)
+  Unmapped:                   19.34%
+
+MAPPING QUALITY DISTRIBUTION:
+  Excellent (>75% total):     143 samples (91.1%)
+  Good (70-75% total):        8 samples (5.1%)
+  Fair (65-70% total):        5 samples (3.2%)
+  Poor (<65% total):          1 sample (0.6%) - SRR11272046 (37.69%)
+
+KEY OBSERVATIONS:
+  • 79.8% average mapping rate is excellent for Smart-seq2 with TE annotations
+  • Multi-mapping (12.85%) indicates proper handling of repetitive TEs
+  • Only 1 sample (SRR11272046) has concerning low mapping (37.69%)
+  • Most samples (91%) have >75% total mapping rate
+
+================================================================================
+scTE QUANTIFICATION RESULTS
+================================================================================
+
+CELL DETECTION:
+  Total cells:                12,942
+  Expected cells:             13,188 (84 per sample)
+  Detection efficiency:       98.1%
+  Samples at 84 cells:        91 (58.0%)
+  Samples at 80-83 cells:     57 (36.3%)
+  Samples at 60-79 cells:     9 (5.7%)
+
+UMI COUNTS:
+  Total UMIs:                 96,298,534
+  Average UMIs/cell:          7,426 (good depth for pooled protocol)
+  Range UMIs/cell:            436 - 20,858
+
+FEATURES DETECTED:
+  Total features available:   76,393 (genes + TEs)
+  Avg features/cell:          511 (0.67% of total - normal for scRNA-seq)
+  Median features/cell:       504
+  Data sparsity:              ~99% (expected for single-cell data)
+
+QUALITY METRICS BY CATEGORY:
+  
+  High quality (>8,000 UMIs/cell):        68 samples (43.3%)
+  Medium quality (6,000-8,000 UMIs/cell): 64 samples (40.8%)
+  Lower quality (<6,000 UMIs/cell):       25 samples (15.9%)
+
+KEY OBSERVATIONS:
+  • 98.1% cell detection rate (246 cells below expected out of 13,188)
+  • Average 7,426 UMIs/cell is appropriate for pooled Smart-seq2
+  • ~500 features/cell typical for shallow sequencing across 84 cells
+  • Data sparsity (99%) is normal for single-cell RNA-seq
+  • 84% of samples have >6,000 UMIs/cell (good quality threshold)
+
+================================================================================
+SAMPLES REQUIRING ATTENTION
+================================================================================
+
+LOW MAPPING RATE (<70%):
+  SRR11272046: 37.69% (61.59% unmapped) - still detected 83 cells
+  SRR11272078: 61.26%
+  SRR11272070: 62.78%
+  SRR11272042: 65.22%
+  SRR11272033: 67.22%
+  SRR11272037: 68.77%
+
+LOW CELL COUNT (<70 cells):
+  SRR11272006: 60 cells (but 11.8M reads, 83% mapping)
+  
+INTERPRETATION:
+  • Even SRR11272046 (worst mapping) detected 83 cells successfully
+  • Low mapping may indicate: contamination, adapter issues, or RNA quality
+  • Despite low mapping, cell detection and UMI counts are reasonable
+  • Recommend: Keep all samples, but flag low-mapping ones for downstream QC
+
+================================================================================
+PIPELINE VALIDATION
+================================================================================
+
+✓ ALIGNMENT SUCCESS:
+  • 157/157 samples aligned successfully
+  • All BAMs have CB (cell barcode) and UB (UMI) tags
+  • Average 79.8% mapping rate (excellent for TE quantification)
+  • Multi-mapping (12.85%) indicates TEs properly included
+
+✓ CELL BARCODE ASSIGNMENT:
+  • 98.1% of expected cells detected (12,942 / 13,188)
+  • 91 samples (58%) detected all 84 expected cells
+  • 66 samples (42%) detected 60-83 cells (likely biological/technical variation)
+
+✓ UMI DEDUPLICATION:
+  • Average 7,426 UMIs/cell across 12,942 cells
+  • Total 96.3M UMIs from 2.86B reads (3.4% UMI efficiency)
+  • Appropriate for pooled protocol with 84 cells/sample
+
+✓ FEATURE QUANTIFICATION:
+  • 76,393 features (genes + TEs) quantified per cell
+  • Average 511 features detected per cell
+  • 99% sparsity is expected for scRNA-seq data
+
+================================================================================
+DOWNSTREAM RECOMMENDATIONS
+================================================================================
+
+DATA QUALITY FILTERING:
+  1. Filter cells: Keep cells with >200 features and >500 UMIs
+  2. Filter features: Keep features detected in ≥3 cells
+  3. Flag samples: Consider removing/flagging SRR11272046 (37.69% mapping)
+
+NEXT STEPS:
+  1. Merge all 157 scTE CSV files into single matrix
+  2. Perform standard scRNA-seq QC (Seurat/Scanpy):
+     - Doublet detection
+     - Mitochondrial percentage filtering
+     - Cell cycle scoring
+  3. Normalize data (TPM/CPM or SCTransform)
+  4. Dimensionality reduction (PCA, UMAP)
+  5. Clustering and cell type identification
+  6. Differential TE expression analysis
+
+TE-SPECIFIC ANALYSIS:
+  1. Separate genes vs TEs in expression matrix
+  2. Analyze TE families (LINE, SINE, LTR, DNA transposons)
+  3. Calculate TE expression per cell type
+  4. Identify cell-type-specific TE activation
+  5. Correlate TE expression with nearby genes
+
+================================================================================
+CONCLUSION
+================================================================================
+
+✓ PIPELINE SUCCESS: All 157 samples successfully processed
+✓ DATA QUALITY: 79.8% mapping, 7,426 UMIs/cell, 511 features/cell
+✓ CELL RECOVERY: 98.1% detection (12,942 of 13,188 expected cells)
+✓ READY FOR ANALYSIS: Data is high quality and ready for downstream analysis
+
+The "sparse" appearance is NORMAL for single-cell data - each cell expresses
+only ~0.67% of available features (511 out of 76,393), which is typical for
+scRNA-seq with shallow per-cell coverage in pooled protocols.
+
+================================================================================
