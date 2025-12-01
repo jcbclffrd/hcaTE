@@ -1,0 +1,37 @@
+================================================================================
+NORMALIZATION AND DIMENSIONALITY REDUCTION REPORT
+================================================================================
+
+Date: 2025-12-01 03:04:23.864685
+
+DATA:
+  Cells: 12515
+  Features: 20048
+    Genes: 17570
+    TEs: 2478
+
+NORMALIZATION:
+  Method: CPM normalization (10,000 counts per cell)
+  Transformation: log1p (natural log)
+  Layers stored: 'counts' (raw), 'log_normalized' (processed)
+
+HIGHLY VARIABLE GENES:
+  Method: Seurat v3
+  Selected: 2000 genes
+
+PCA:
+  Components computed: 50
+  PCs for downstream: 30 (explaining 22.2% variance)
+  Variance explained by PC1: 3.0%
+  Variance explained by PC2: 1.5%
+
+NEIGHBORHOOD GRAPH:
+  Neighbors: 15
+  PCs used: 30
+  Method: UMAP
+  Metric: Euclidean
+
+UMAP:
+  Min distance: 0.3
+  Spread: 1.0
+  Computed from 30 PCs
