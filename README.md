@@ -256,19 +256,14 @@ Rscript scripts/pseudobulk_diffexp_analysis.R
 ### Differential Expression Results
 
 **AD vs Control (n=12 vs n=9)**:
-- **165 significant features** (padj < 0.05)
-- **26 significant transposable elements**
-- Top findings: HSPA6 (heat shock), MER61B (LTR/ERV1), JUN (transcription factor)
+- **Analysis status**: Differential expression analysis completed but results under review
+- Paper (Alsema et al. 2020) reported SIGLEC1, CXCL10 from bulk RNA-seq
+- Our pseudobulk analysis found different genes (JUN, HSPA6, COA1) not reported in paper
+- **⚠️ Results validation needed**: Discrepancy between our findings and paper's supplementary tables suggests potential analysis issues
 
 **AD vs CTR+ (n=12 vs n=6)**:
-- **100 significant features** (padj < 0.05)
-- **13 significant transposable elements**
-- Similar patterns to AD vs Control
-
-**Novel Findings**:
-- Heat shock response genes upregulated (HSPA6, HSPA1A, HSPA1B)
-- LTR retrotransposons differentially expressed (MER61B, HERVFH21)
-- Mitochondrial/ribosomal changes (COA1, MRPL14, MRPS27)
+- **100 significant features** (padj < 0.05) - under review
+- Similar discrepancies with paper's reported genes
 
 **Consistency with Paper**:
 - ✅ Microglia markers unchanged (CX3CR1, P2RY12, TMEM119)
