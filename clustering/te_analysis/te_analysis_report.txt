@@ -1,0 +1,89 @@
+================================================================================
+TE EXPRESSION ANALYSIS REPORT
+================================================================================
+
+Date: 2025-12-01 03:56:01.756258
+
+DATASET SUMMARY:
+  Total cells: 12515
+  Total features: 20048
+  Genes: 17570
+  TEs: 2478
+  Clusters: 9
+
+TE STATISTICS PER CLUSTER:
+cluster  n_cells  te_pct_mean  te_pct_median  te_counts_mean  te_counts_median  n_tes_mean  n_tes_median
+      0     3399    52.301674      50.589391      426.196045        425.980835  211.464843         208.0
+      1     1945    54.580071      53.007061      436.742615        439.694153  211.000514         211.0
+      2     1880    62.217903      60.863225      442.624268        444.399170  213.765426         212.0
+      3     1677    69.770838      70.561965      423.047333        426.851471  193.025045         187.0
+      4     1224    48.607889      46.855016      423.961639        423.117126  213.752451         214.0
+      5      902    55.868301      54.556381      447.351166        449.992493  221.572062         220.0
+      6      749    62.045997      61.040449      448.503265        449.322632  214.734312         212.0
+      7      548    56.681819      55.329164      430.076721        431.127075  202.649635         198.5
+      8      191    44.208394      44.471409      411.433044        410.845154  209.717277         205.0
+
+TE CLASS DISTRIBUTION:
+te_class
+Simple_repeat     1328
+LTR                551
+DNA                226
+LINE               167
+SINE                60
+Unknown             42
+tRNA                35
+Satellite           17
+DNA?                14
+snRNA               11
+Retroposon           6
+scRNA                5
+Low_complexity       4
+RC                   3
+LTR?                 3
+rRNA                 3
+RC?                  1
+RNA                  1
+srpRNA               1
+
+TOP 10 TE FAMILIES:
+te_family
+Simple_repeat    1328
+ERV1              286
+L1                131
+ERVL              115
+ERVL-MaLR          79
+hAT-Charlie        72
+TcMar-Tigger       63
+Alu                51
+Unknown            42
+ERVK               38
+
+TE VS GENE EXPRESSION:
+cluster  mean_gene_expr  mean_te_expr  te_gene_ratio
+      0      642.280029    426.196045       0.663567
+      1      599.509644    436.742615       0.728500
+      2      482.901306    442.624268       0.916594
+      3      336.371857    423.047333       1.257678
+      4      701.699524    423.961639       0.604193
+      5      628.348267    447.351166       0.711948
+      6      485.461731    448.503265       0.923869
+      7      534.022827    430.076721       0.805353
+      8      797.183594    411.433044       0.516108
+
+KEY FINDINGS:
+  - Mean TE expression across all cells: 57.03%
+  - Cluster with highest TE %: 3
+  - Cluster with lowest TE %: 8
+  - Most abundant TE class: Simple_repeat
+  - Most abundant TE family: Simple_repeat
+
+DIFFERENTIALLY EXPRESSED TEs (padj < 0.05):
+  Cluster 0: 73 significant TEs
+  Cluster 1: 7 significant TEs
+  Cluster 2: 51 significant TEs
+  Cluster 3: 208 significant TEs
+  Cluster 4: 44 significant TEs
+  Cluster 5: 46 significant TEs
+  Cluster 6: 25 significant TEs
+  Cluster 7: 0 significant TEs
+  Cluster 8: 14 significant TEs
