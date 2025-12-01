@@ -1,0 +1,32 @@
+================================================================================
+QUALITY CONTROL FILTERING REPORT
+================================================================================
+
+Date: 2025-12-01 03:01:13.692958
+
+FILTERING THRESHOLDS:
+  Min counts per cell: 500
+  Min genes per cell: 200
+  Min cells expressing feature: 10
+
+FILTERING RESULTS:
+  Cells: 12942 → 12515 (96.7% retained)
+  Features: 76393 → 20048 (26.2% retained)
+    Genes: 17570 (87.6% of features)
+    TEs: 2478 (12.4% of features)
+
+CELLS BY CONDITION (after filtering):
+condition
+Unknown    10190
+AD           959
+CTR          592
+CTR+         453
+MCI          321
+
+QC METRICS (after filtering):
+  Mean counts per cell: 7630.8
+  Median counts per cell: 6897.0
+  Mean genes per cell: 524.0
+  Median genes per cell: 498.0
+  Mean % TE: 57.03%
+  Median % TE: 55.12%
