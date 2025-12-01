@@ -56,10 +56,11 @@ hcaTE/
 ├── genome/                 # ✓ hg38 reference genome
 ├── star_index/             # ✓ STAR genome index
 ├── scripts/                # ✓ Analysis scripts
-├── scTE_output/            # ✓ Single-cell TE quantification
-├── pseudobulk/             # ✓ Aggregated counts + DE results
-├── validation/             # ✓ Pipeline validation reports
+├── scTE_output/            # ✓ Single-cell TE quantification (Smart-seq2)
+├── clustering/             # ✓ Single-cell clustering analysis results (v0.2.0)
 └── README.md               # This file
+
+Note: pseudobulk/, validation/, and pipeline validation docs available in tag v0.1.0
 ```
 
 ## Pipeline: UMI-tools + STAR Alignment (COMPLETED ✓)
@@ -243,39 +244,38 @@ Rscript scripts/pseudobulk_diffexp_analysis.R
 
 **Output**: Significant TEs in `pseudobulk/pseudobulk_diffexp_results_TEs_significant.csv`
 
-## Results Summary
+## Analysis Results
 
-### ✅ Pipeline Validated (December 1, 2024)
+### ✅ Single-Cell Clustering Analysis (v0.2.0 - Current)
 
-**Validation Results**:
+**Latest Results** - See [CLUSTERING_RESULTS.md](CLUSTERING_RESULTS.md) for complete details:
+- **9 microglial subpopulations identified** using Leiden clustering
+- **12,515 high-quality cells** analyzed from 157 samples
+- **468 differentially expressed TEs** across clusters (padj < 0.05)
+- **Remarkably high TE expression**: Mean 57% across all cells
+- **Cluster 3**: 69.8% TE expression (TE-activated state)
+- **Cluster 8**: 44.2% TE expression (homeostatic state)
+
+### ✅ Pipeline Validation (v0.1.0)
+
+**Initial validation completed** (December 1, 2024):
 - **20/22 microglia markers detected** (90.9% detection rate)
 - **All core identity markers present**: CX3CR1, P2RY12, TMEM119, AIF1, CSF1R
-- **Zero markers significantly different in AD** (matches paper's main finding)
-- See [PIPELINE_VALIDATION.md](PIPELINE_VALIDATION.md) for complete report
+- Pipeline validated with pseudobulk differential expression
 
-### Differential Expression Results
+**Note**: Pseudobulk analysis, pipeline validation reports, and regional QC results are available in git tag **v0.1.0**. These were removed from the main branch to keep the repository lightweight.
 
-**AD vs Control (n=12 vs n=9)**:
-- **Analysis status**: Differential expression analysis completed but results under review
-- Paper (Alsema et al. 2020) reported SIGLEC1, CXCL10 from bulk RNA-seq
-- Our pseudobulk analysis found different genes (JUN, HSPA6, COA1) not reported in paper
-- **⚠️ Results validation needed**: Discrepancy between our findings and paper's supplementary tables suggests potential analysis issues
-
-**AD vs CTR+ (n=12 vs n=6)**:
-- **100 significant features** (padj < 0.05) - under review
-- Similar discrepancies with paper's reported genes
-
-**Consistency with Paper**:
-- ✅ Microglia markers unchanged (CX3CR1, P2RY12, TMEM119)
-- ✅ No major cell-type composition changes
-- 📊 Different from bulk RNA-seq approach (see [WHY_PAPERS_GENES_ARE_MISSING.md](pseudobulk/WHY_PAPERS_GENES_ARE_MISSING.md))
+To access v0.1.0 files:
+```bash
+git checkout v0.1.0
+# Files available: pseudobulk/, validation/, PIPELINE_VALIDATION.md, etc.
+```
 
 ### Key Documentation
 
-- [PIPELINE_VALIDATION.md](PIPELINE_VALIDATION.md) - Complete validation report
-- [REPRODUCIBLE_ANALYSES.md](REPRODUCIBLE_ANALYSES.md) - Suggested reproducible analyses
-- [pseudobulk/WHY_PAPERS_GENES_ARE_MISSING.md](pseudobulk/WHY_PAPERS_GENES_ARE_MISSING.md) - Explains methodological differences
-- [validation/](validation/) - Validation plots and statistics
+- [CLUSTERING_RESULTS.md](CLUSTERING_RESULTS.md) - Complete single-cell clustering analysis results (v0.2.0)
+- [CLUSTERING_PLAN.md](CLUSTERING_PLAN.md) - Analysis strategy and workflow
+- Tag v0.1.0 - Pipeline validation, pseudobulk analysis, and QC reports
 
 ## Contact & Context
 
