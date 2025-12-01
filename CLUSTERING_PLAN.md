@@ -23,11 +23,11 @@ Perform single-cell clustering analysis to:
 
 ## Data Available
 
-- **31 samples** with scTE quantification (SRR11271993 - SRR11272023)
-- **~12,942 total cells** (~80-84 cells per sample)
+- **158 samples** with scTE quantification (SRR11271993 - SRR11272169)
+- **~12,640 total cells** (~80 cells per sample)
 - **Per-cell expression matrices** in `scTE_output/SRR*/SRR*.csv`
 - **Cell barcodes**: 84 valid 10bp barcodes
-- **Features**: ~15,661 genes + TEs combined
+- **Features**: ~76,394 genes + TEs combined
 
 ## Analysis Pipeline
 
