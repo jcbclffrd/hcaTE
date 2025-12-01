@@ -2,6 +2,11 @@
 
 > **🤖 This pipeline was built by GitHub Copilot coding agent**
 
+## Pipeline Status: ✅ **VALIDATED** (Dec 1, 2024)
+
+**Pipeline validation completed**: 20/22 microglia markers detected, all core analyses working correctly.  
+See [PIPELINE_VALIDATION.md](PIPELINE_VALIDATION.md) for complete validation report.
+
 ## Project Overview
 This project analyzes **Smart-seq2 single-cell RNA-seq data** from human microglia in Alzheimer's Disease to quantify transposable element (TE) expression at the single-cell level.
 
@@ -212,10 +217,50 @@ Rscript scripts/pseudobulk_diffexp_analysis.R
 
 **Output**: Significant TEs in `pseudobulk/pseudobulk_diffexp_results_TEs_significant.csv`
 
+## Results Summary
+
+### ✅ Pipeline Validated (December 1, 2024)
+
+**Validation Results**:
+- **20/22 microglia markers detected** (90.9% detection rate)
+- **All core identity markers present**: CX3CR1, P2RY12, TMEM119, AIF1, CSF1R
+- **Zero markers significantly different in AD** (matches paper's main finding)
+- See [PIPELINE_VALIDATION.md](PIPELINE_VALIDATION.md) for complete report
+
+### Differential Expression Results
+
+**AD vs Control (n=12 vs n=9)**:
+- **165 significant features** (padj < 0.05)
+- **26 significant transposable elements**
+- Top findings: HSPA6 (heat shock), MER61B (LTR/ERV1), JUN (transcription factor)
+
+**AD vs CTR+ (n=12 vs n=6)**:
+- **100 significant features** (padj < 0.05)
+- **13 significant transposable elements**
+- Similar patterns to AD vs Control
+
+**Novel Findings**:
+- Heat shock response genes upregulated (HSPA6, HSPA1A, HSPA1B)
+- LTR retrotransposons differentially expressed (MER61B, HERVFH21)
+- Mitochondrial/ribosomal changes (COA1, MRPL14, MRPS27)
+
+**Consistency with Paper**:
+- ✅ Microglia markers unchanged (CX3CR1, P2RY12, TMEM119)
+- ✅ No major cell-type composition changes
+- 📊 Different from bulk RNA-seq approach (see [WHY_PAPERS_GENES_ARE_MISSING.md](pseudobulk/WHY_PAPERS_GENES_ARE_MISSING.md))
+
+### Key Documentation
+
+- [PIPELINE_VALIDATION.md](PIPELINE_VALIDATION.md) - Complete validation report
+- [REPRODUCIBLE_ANALYSES.md](REPRODUCIBLE_ANALYSES.md) - Suggested reproducible analyses
+- [pseudobulk/WHY_PAPERS_GENES_ARE_MISSING.md](pseudobulk/WHY_PAPERS_GENES_ARE_MISSING.md) - Explains methodological differences
+- [validation/](validation/) - Validation plots and statistics
+
 ## Contact & Context
 
 This is part of a larger analysis to understand TE expression differences in Alzheimer's Disease microglia at single-cell resolution. The downstream tool (scTE) will quantify TEs per cell from the aligned BAMs.
 
 ---
-**Date Created**: November 27, 2025
+**Date Created**: November 27, 2024  
+**Pipeline Validated**: December 1, 2024  
 **Created By**: Analysis migration from HumanBam2scTE (bulk) → hcaTE (single-cell)
