@@ -1,0 +1,137 @@
+================================================================================
+CLUSTERING ANALYSIS REPORT
+================================================================================
+
+Date: 2025-12-01 03:07:31.047225
+
+CLUSTERING PARAMETERS:
+  Method: Leiden
+  Resolution: 0.2
+  Number of clusters: 9
+  Target clusters: 7 (from paper)
+
+CLUSTER SIZES:
+  Cluster 0: 3399 cells (27.2%)
+  Cluster 1: 1945 cells (15.5%)
+  Cluster 2: 1880 cells (15.0%)
+  Cluster 3: 1677 cells (13.4%)
+  Cluster 4: 1224 cells (9.8%)
+  Cluster 5: 902 cells (7.2%)
+  Cluster 6: 749 cells (6.0%)
+  Cluster 7: 548 cells (4.4%)
+  Cluster 8: 191 cells (1.5%)
+
+CLUSTER COMPOSITION BY CONDITION:
+condition   AD  CTR  CTR+  MCI  Unknown
+leiden                                 
+0          228   71    79   95     2926
+1          157   64    87   63     1574
+2          157  107    80   51     1485
+3          105  227    89   24     1232
+4          112   28    39   18     1027
+5           53   26    32   17      774
+6           86   47    24   29      563
+7           54   21    17   19      437
+8            7    1     6    5      172
+
+MARKER GENES (top 5 per cluster):
+
+Cluster 0:
+  MTND1P23: logFC=4.83, pval=0.00e+00
+  MT-ND1: logFC=3.28, pval=2.41e-168
+  SNHG12: logFC=3.03, pval=2.99e-122
+  MTCO1P12: logFC=1.46, pval=2.45e-71
+  tRNA-Ser-TCA(m)#tRNA#tRNA: logFC=1.48, pval=2.87e-66
+
+Cluster 1:
+  TARDBP: logFC=3.45, pval=8.78e-42
+  TNFRSF1B: logFC=2.24, pval=1.70e-24
+  SPEN: logFC=2.66, pval=5.27e-16
+  CCNL2: logFC=2.62, pval=1.25e-08
+  CLSTN1: logFC=2.78, pval=2.28e-07
+
+Cluster 2:
+  IFI16: logFC=2.04, pval=1.43e-43
+  SFPQ: logFC=1.86, pval=8.53e-36
+  (A)n#Simple_repeat#Simple_repeat: logFC=0.38, pval=4.41e-29
+  (T)n#Simple_repeat#Simple_repeat: logFC=0.35, pval=7.74e-25
+  GNB1: logFC=1.61, pval=2.46e-13
+
+Cluster 3:
+  (T)n#Simple_repeat#Simple_repeat: logFC=0.82, pval=2.59e-119
+  (A)n#Simple_repeat#Simple_repeat: logFC=0.75, pval=4.64e-106
+  L1HS#LINE#L1: logFC=0.71, pval=1.73e-53
+  (AT)n#Simple_repeat#Simple_repeat: logFC=0.60, pval=6.56e-53
+  AluJr#SINE#Alu: logFC=0.38, pval=7.32e-40
+
+Cluster 4:
+  RPL22: logFC=5.66, pval=2.72e-168
+  ISG15: logFC=5.91, pval=1.46e-64
+  CDK11B: logFC=4.70, pval=6.05e-48
+  ENSG00000285629: logFC=5.34, pval=1.42e-37
+  B2M: logFC=1.14, pval=1.69e-37
+
+Cluster 5:
+  ENSG00000241860: logFC=9.02, pval=0.00e+00
+  AluSq2#SINE#Alu: logFC=1.03, pval=1.85e-120
+  ENSG00000290385: logFC=4.78, pval=7.44e-45
+  ENSG00000291215: logFC=5.34, pval=3.00e-31
+  L1MC5a#LINE#L1: logFC=0.69, pval=2.00e-14
+
+Cluster 6:
+  TUT4: logFC=4.59, pval=7.32e-68
+  PRDM2: logFC=4.04, pval=1.89e-44
+  JAK1: logFC=3.70, pval=8.47e-33
+  (T)n#Simple_repeat#Simple_repeat: logFC=0.28, pval=2.39e-06
+  (A)n#Simple_repeat#Simple_repeat: logFC=0.25, pval=2.25e-05
+
+Cluster 7:
+  ITM2B: logFC=4.12, pval=1.31e-244
+  SSU-rRNA_Hsa#rRNA#rRNA: logFC=0.37, pval=1.00e+00
+  MER5A1#DNA#hAT-Charlie: logFC=0.33, pval=1.00e+00
+  AluJo#SINE#Alu: logFC=0.09, pval=1.00e+00
+  HNRNPL: logFC=0.44, pval=1.00e+00
+
+Cluster 8:
+  MRPL20: logFC=10.84, pval=1.55e-119
+  MRPL20-AS1: logFC=10.81, pval=6.45e-97
+  FTL: logFC=1.97, pval=1.34e-16
+  CD74: logFC=1.80, pval=2.86e-13
+  FTH1P2: logFC=1.85, pval=8.83e-13
+
+MICROGLIA MARKER EXPRESSION:
+
+Core identity:
+  CX3CR1: mean=0.30, 13.6% cells expressing
+  P2RY12: mean=0.28, 14.0% cells expressing
+  TMEM119: mean=0.04, 2.4% cells expressing
+  AIF1: mean=0.77, 30.6% cells expressing
+  CSF1R: mean=0.47, 23.5% cells expressing
+
+Homeostatic:
+  P2RY12: mean=0.28, 14.0% cells expressing
+  TMEM119: mean=0.04, 2.4% cells expressing
+  GPR34: mean=0.10, 6.7% cells expressing
+  OLFML3: mean=0.41, 18.5% cells expressing
+  SALL1: mean=0.02, 1.3% cells expressing
+
+Activated:
+  CD68: mean=0.10, 7.8% cells expressing
+  CD86: mean=0.10, 4.7% cells expressing
+  ITGAX: mean=0.68, 35.3% cells expressing
+
+Proliferation:
+  MKI67: mean=0.00, 0.1% cells expressing
+  TOP2A: mean=0.00, 0.2% cells expressing
+  PCNA: mean=0.01, 0.5% cells expressing
+
+Inflammation:
+  IL1B: mean=0.07, 3.0% cells expressing
+  TNF: mean=0.00, 0.2% cells expressing
+  CXCL10: mean=0.00, 0.1% cells expressing
+
+Phagocytosis:
+  CD68: mean=0.10, 7.8% cells expressing
+  TREM2: mean=0.18, 9.2% cells expressing
+  APOE: mean=0.35, 20.8% cells expressing
+  LPL: mean=0.01, 0.6% cells expressing
