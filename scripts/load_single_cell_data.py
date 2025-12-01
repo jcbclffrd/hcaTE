@@ -33,7 +33,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 print("\n1. Loading sample metadata...")
 sample_info = pd.read_csv(SAMPLE_INFO_PATH)
 print(f"   Loaded {len(sample_info)} samples with metadata")
-print(f"   Conditions: {sample_info['condition'].value_counts().to_dict()}")
+print(f"   Conditions: {sample_info['Condition'].value_counts().to_dict()}")
 
 # Find all scTE output files
 print("\n2. Finding scTE output files...")
@@ -62,7 +62,7 @@ for i, csv_file in enumerate(csv_files, 1):
     all_dfs.append(df)
     
     # Get condition for this sample
-    sample_condition = sample_info[sample_info['sample_id'] == sample_id]['condition'].values
+    sample_condition = sample_info[sample_info['Sample'] == sample_id]['Condition'].values
     condition = sample_condition[0] if len(sample_condition) > 0 else "Unknown"
     
     # Create metadata for each cell in this sample
