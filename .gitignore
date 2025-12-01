@@ -81,6 +81,11 @@ Log*.progress.out
 *.tgz
 *.rar
 
+# Large HDF5 data files (AnnData objects)
+*.h5ad
+*.h5
+*.hdf5
+
 # System files
 Thumbs.db
 .directory
