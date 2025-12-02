@@ -37,7 +37,7 @@ RAM_GB=60000000000  # 60GB in bytes
 
 # 10x Genomics v2 chemistry parameters
 WHITELIST="${PROJECT_DIR}/annotations/10x_whitelist_v2.txt"
-UMI_LENGTH=10
+UMI_LENGTH=11
 BARCODE_LENGTH=16
 
 # Sample information
@@ -162,7 +162,8 @@ for SAMPLE in "${!SAMPLES[@]}"; do
         --soloCBstart 1 \
         --soloCBlen $BARCODE_LENGTH \
         --soloUMIstart 17 \
-        --soloUMIlen $UMI_LENGTH \
+        --soloUMIlen 10 \
+        --soloBarcodeReadLength 0 \
         --soloStrand Forward \
         --soloFeatures Gene GeneFull \
         --soloCellFilter EmptyDrops_CR \

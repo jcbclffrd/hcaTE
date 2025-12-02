@@ -89,3 +89,12 @@ Log*.progress.out
 # System files
 Thumbs.db
 .directory
+
+# 10x Genomics data
+10x_downloads/
+10x_aligned_starsolo/
+10x_scTE_output/
+star_index_10x/
+
+# Temporary SRA files
+fasterq.tmp.*/
