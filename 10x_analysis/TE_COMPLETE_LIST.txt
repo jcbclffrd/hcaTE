@@ -1,0 +1,90 @@
+# Complete List of Transposable Elements
+# Quantified in 10x Genomics Data (GSE146639)
+# Total: 14,815 TEs
+
+## TE Categories and Counts
+
+LINE Elements (171 total):
+  - L1 (Long Interspersed Element-1): 132 subfamilies
+  - CR1: 22 subfamilies
+  - L2: 10 subfamilies
+  - RTE-X: 4
+  - RTE-BovB: 1
+  - Penelope: 1
+  - Dong-R4: 1
+
+SINE Elements (60 total):
+  - Alu (most abundant SINE): 51 subfamilies
+  - MIR (Mammalian-wide Interspersed Repeat): 5 subfamilies
+  - tRNA-related: 4
+
+LTR Elements (578 total):
+  - ERV1 (Endogenous Retrovirus 1): 298 subfamilies
+  - ERVL: 121 subfamilies
+  - ERVL-MaLR: 84 subfamilies
+  - ERVK: 42 subfamilies
+  - Gypsy: 17 subfamilies
+  - Other: 16
+
+DNA Transposons (243 total):
+  - Various DNA transposon families
+  - hAT, Tc1-Mariner, PiggyBac, etc.
+
+Simple Repeats (13,538 total):
+  - Microsatellites: (A)n, (T)n, (G)n, (C)n
+  - Dinucleotides: (AT)n, (AG)n, (AC)n, (TG)n, (GA)n, (GC)n
+  - Trinucleotides: (AAT)n, (AAC)n, (GCT)n, etc.
+  - Longer repeats
+
+Retroposons (6 total):
+  - SVA (SINE-VNTR-Alu): Multiple subfamilies
+  - Very young, human-specific elements
+
+Other RNA Elements:
+  - tRNA: 62
+  - snRNA: 12
+  - rRNA: 3
+  - scRNA: 5
+  - srpRNA: 1
+
+Satellites (22 total):
+  - Alpha satellite
+  - Beta satellite
+  - Centromeric repeats
+
+Low Complexity (4 total)
+Unknown Classification (71 total)
+
+## Filtering for Differential Expression
+Out of 14,815 total TEs:
+  - 1,847 passed filtering (≥10 cells, ≥3 counts)
+  - 238 were significantly different between AD and MCI (FDR < 0.05)
+  - 12,968 were excluded due to low expression
+
+## Most Important TE Families for AD Research
+
+### L1 Elements (Most studied)
+Active in human genome, linked to:
+  - Somatic mosaicism in brain
+  - Neurodegeneration
+  - Age-related accumulation
+  - Tau-mediated activation in AD
+
+### Alu Elements (Most abundant)
+  - ~1 million copies in human genome
+  - Can cause RNA toxicity
+  - Involved in inflammation
+  - Increased in AD brains
+
+### SVA Elements (Young, active)
+  - Human-specific
+  - Polymorphic (variable between individuals)
+  - Can disrupt genes
+  - Fewer than 3,000 copies
+
+### ERV/LTR Elements (Ancient retroviruses)
+  - Remnants of viral infections
+  - Most are silenced
+  - Can be reactivated under stress
+  - Linked to innate immunity
+
