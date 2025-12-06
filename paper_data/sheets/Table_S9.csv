@@ -1,0 +1,27 @@
+"Table S9 Statistics of the average gene set expression changes in single-cell clusters (related to Fig 3E, 4B, C, D, F, G, H).","...2","...3","...4","...5","...6","...7","...8"
+"BC-SMARTSEQ2 – 14 donors",NA,NA,NA,NA,NA,NA,NA
+"cluster","n cells","average DAM expression change (Standard Error)","adjusted p-value","average myeloid neurodegeneration-related expression change (Standard Error)","adjusted p-value","Average AD-related single-nucleus expression change (Standard Error)","adjusted p-value"
+"0","4196","-0.0074 (0.0016)","1.2279823031900801E-4","0.0053 (0.0015)","1.268223471407E-2","-0.0090 (0.0043)","0.75169388999904596"
+"1","3811","-0.0149 (0.0016)","3.14618592391953E-18","-0.0097 (0.0015)","8.4170439999999993E-9","-0.032 (0.0043)","2.32741478112062E-12"
+"2","1356","0.0421 (0.0022)","1.1785279999999999E-75","0.0065 (0.0022)","4.9613697091330997E-2","0.0781 (0.0060)","1.1225770000000001E-37"
+"3","157","-0.0013 (0.0062)","1","0.0020 (0.0058)","1","-0.0100 (0.0162)","1"
+"4","127","0.0092 (0.0069)","1","0.0041 (0.0064)","1","0.0106 (0.0180)","1"
+"5","88","0.0068 (0.0082)","1","0.0109 (0.0077)","1","0.0236 (0.0216)","1"
+"6","29","-0.0104 (0.0143)","1","0.0097 (0.0134)","1","-0.0061 (0.0375)","1"
+NA,"9764",NA,NA,NA,NA,NA,NA
+"lm formula","Gene.set.score ~ Genesetscore_cluster_k + cell_detected_genes + cell_UMI_count + Donor",NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA
+"10X GENOMICS SINGLE MICROGLIA – AD DONOR 2018-135",NA,NA,NA,NA,NA,NA,NA
+"cluster","n cells","average DAM expression change (Standard Error)","adjusted p-value","average myeloid neurodegeneration-related expression change (Standard Error)","adjusted p-value","Average AD-related single-nucleus expression change (Standard Error)","adjusted p-value"
+"0","1408","0.0010 (0.0043)","1","-0.0068 (0.0029)","0.36270039999999998","-0.0179 (0.0097)","1"
+"1","886","0.0127 (0.0047)","0.13652835999999999","0.0060 (0.0031)","1","0.0480 (0.0105)","1.098136E-4"
+"2","587","-0.0182 (0.0053)","1.394635E-2","0.0026 (0.0035)","1","-0.0356 (0.0121)","6.9079041499999994E-2"
+NA,"2881",NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA
+"10X GENOMICS SINGLE MICROGLIA – MCI DONOR 2019-010",NA,NA,NA,NA,NA,NA,NA
+"cluster","n cells","average DAM expression change (Standard Error)","adjusted p-value","average myeloid neurodegeneration-related expression change (Standard Error)","adjusted p-value","Average AD-related single-nucleus expression change (Standard Error)","adjusted p-value"
+"0","1187","-0.0050 (0.0044)","1","-0.0094 (0.0028)","1.7830490000000001E-2","-0.0355 (0.0103)","1.270049E-2"
+"1","1172","-0.0002 (0.0044)","1","0.0059 (0.0028 )","0.79284502999999995","0.0288 (0.0104)","0.11626644999999999"
+"2","720","0.0068 ( 0.0051)","1","0.0047 (0.0032)","1","0.0090 (0.0119)","1"
+NA,"3079",NA,NA,NA,NA,NA,NA
+"lm formula","Gene.set.score ~ Genesetscore_cluster_k + cell_UMI_count",NA,NA,NA,NA,NA,NA

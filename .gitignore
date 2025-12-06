@@ -96,5 +96,9 @@ Thumbs.db
 10x_scTE_output/
 star_index_10x/
 
+# Paper supplemental data (large Excel files)
+*.xlsx
+*.xls
+
 # Temporary SRA files
 fasterq.tmp.*/
